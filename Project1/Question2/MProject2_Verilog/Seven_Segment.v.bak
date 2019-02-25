@@ -1,0 +1,242 @@
+module Seven_Segment( grounds, grounds1, display, clk , dip_switch);
+
+output reg [3:0] grounds;
+output reg [6:0] display;
+output [3:0] grounds1;
+input [3:0] dip_switch;
+input clk;
+
+reg [71:0] student_ids; // concat of student ids.
+reg [3:0] data [3:0] ; //number to be printed on display
+reg [1:0] count;       //which data byte to display.
+reg [25:0] clk1;
+
+reg [25:0] ticker_normal;
+reg [24:0] ticker_double;
+reg ticker;
+wire tick_click;
+
+reg ds2_mode;
+reg swing_mode;
+reg [3:0] swing_counter;
+
+
+// ---- DISPLAY CLOCK ----- 
+always @(posedge clk1[15]) //25 slow //19 wavy //15 perfect
+begin
+    grounds<={grounds[2:0],grounds[3]};
+    count<=count+1;
+end
+
+always @(posedge clk)
+    clk1<=clk1+1;
+
+// ---- TICKER DOUBLE CLOCK -----
+always @ (posedge clk) //always block for the ticker
+begin
+ if(ticker_double[24] == 1) //reset after 1 second
+  ticker_double <= 0;
+ else
+  ticker_double <= ticker_double + 1;
+end
+
+
+// ---- TICKER NORMAL CLOCK -----
+always @ (posedge clk) //always block for the ticker
+begin
+ if(ticker_normal[25] == 1) //reset after 1 second
+  ticker_normal <= 0;
+ else
+  ticker_normal <= ticker_normal + 1;
+end
+
+
+
+
+
+// -----------------------
+
+// ------ DISPLAY SETTINGS ------
+always @ (posedge tick_click) //always block for the ticker
+begin
+    data[0]=student_ids[71:68];
+    data[1]=student_ids[67:64];
+    data[2]=student_ids[63:60];
+    data[3]=student_ids[59:56];
+	 
+	case(ds2_mode)
+	0:
+		begin 
+		student_ids = {student_ids[70:0],student_ids[71]};
+		student_ids = {student_ids[70:0],student_ids[71]};
+		student_ids = {student_ids[70:0],student_ids[71]};
+		student_ids = {student_ids[70:0],student_ids[71]};
+		end
+	1:
+		begin 
+		if (swing_mode == 0)
+				begin 
+				student_ids = {student_ids[70:0],student_ids[71]};
+				student_ids = {student_ids[70:0],student_ids[71]};
+				student_ids = {student_ids[70:0],student_ids[71]};
+				student_ids = {student_ids[70:0],student_ids[71]};
+				
+				
+				if (swing_counter == 14)
+					begin
+					swing_mode = 1;
+					end
+				else
+					begin
+					swing_mode = 0;
+					end
+					
+				swing_counter = swing_counter + 1;
+
+				end
+		else if(swing_mode == 1)
+				begin 
+				student_ids = {student_ids[0],student_ids[71:1]};
+				student_ids = {student_ids[0],student_ids[71:1]};
+				student_ids = {student_ids[0],student_ids[71:1]};
+				student_ids = {student_ids[0],student_ids[71:1]};
+				
+				
+				if (swing_counter == 0)
+					begin
+					swing_mode = 0;
+					end
+				else
+					begin
+					swing_mode = 1;
+					end
+					
+				swing_counter = swing_counter - 1;
+			        end
+		else 
+			begin
+	 		swing_mode = 0;
+		        end
+
+		endcase
+end
+// ----- ROTATE EFFECT ----- 
+
+
+
+
+
+//-------------------------
+
+assign grounds1=grounds;
+
+// ------ DISPLAY SETTINGS - DATA ------
+always @(*)
+    case(data[count])
+        0:display=7'b0111111; //starts with a, ends with g
+        1:display=7'b0000110;
+        2:display=7'b1011011;
+        3:display=7'b1001111;
+        4:display=7'b1100110;
+        5:display=7'b1101101;
+        6:display=7'b1111101;
+        7:display=7'b0000111;
+        8:display=7'b1111111;
+        9:display=7'b1101111;
+        'ha:display=7'b1110111;
+        'hb:display=7'b1111100;
+        'hc:display=7'b0111001;
+        'hd:display=7'b1011110;
+        'he:display=7'b1111001;
+        'hf:display=7'b1110001;
+        default display=7'b1111111;
+    endcase
+
+
+
+// ------ Ticker For Sliding ------ 
+
+assign tick_click = ((ticker == 1)?1'b1:1'b0);
+
+// ------ DIP SWITCH SETTINGS ------
+
+// ------ DIP SWITCH 1 ------
+
+always @(*)
+    case(dip_switch[0])
+        0:
+			begin 
+			ticker = ((ticker_normal[25] == 1)?1'b1:1'b0);
+			end
+        1:
+			begin 
+			ticker = ((ticker_double[24] == 1)?1'b1:1'b0);
+			end
+		  default: ticker = ((ticker_normal[25] == 1)?1'b1:1'b0);
+    endcase
+
+// ------ DIP SWITCH 2 ------
+
+always @(*)
+    case(dip_switch[1])
+      0:
+			begin 
+			swing_mode = 0;
+			swing_counter = 0;
+			ds2_mode = 0;
+			end
+      1:
+			begin 
+			swing_mode = 0;
+			swing_counter = 0;
+			ds2_mode = 1;
+			end
+		default: 
+			begin
+			swing_mode = 0;
+			swing_counter = 0;
+			ds2_mode = 0;
+			end
+    endcase
+
+// ------ DIP SWITCH 3 ------
+
+always @(*)
+    case(dip_switch[2])
+        0:
+	begin 
+	end
+        1:
+	begin 
+	end
+    endcase
+
+// ------ DIP SWITCH 4 ------
+
+always @(*)
+    case(dip_switch[3])
+        0:
+	begin 
+	end
+        1:
+	begin 
+	end
+    endcase
+
+
+initial begin
+    count = 2'b0;
+    grounds= 4'b1110;
+    student_ids = 72'b000101010000000100010101000000001001000101010000000100010100000000010110;
+    clk1=0;
+	 ticker_normal = 0;
+    ticker_double = 0;
+	 data[0]=student_ids[71:68];
+    data[1]=student_ids[67:64];
+    data[2]=student_ids[63:60];
+    data[3]=student_ids[59:56];
+    
+end
+
+endmodule
+

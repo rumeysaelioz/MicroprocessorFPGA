@@ -1,0 +1,14 @@
+ldi 0 0x0075
+ldi 1 0x0040
+ldi 2 0x002f
+ldi 3 0x000f
+or 0 0 1
+inc 0
+and 2 2 3
+sub 0 0 2
+dec 0
+ldi 1 0x000c
+ldi 2 0x005f
+sub 1 1 2
+not 1 1
+xor 0 0 1

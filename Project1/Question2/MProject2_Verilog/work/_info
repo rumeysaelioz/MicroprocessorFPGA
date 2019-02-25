@@ -1,0 +1,76 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/Ferhat/Desktop/MProject_Verilog
+vSegment7
+!s110 1539995289
+!i10b 1
+!s100 O8R<@FKB<5D:_b4EN[1jz2
+I2=EkUFnYhIEoQ]>_4FTWZ3
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+Z1 dC:/Users/Ferhat/Desktop/MProject2_Verilog
+w1539995286
+Z2 8C:\Users\Ferhat\Desktop\MProject2_Verilog\Seven_Segment.v
+Z3 FC:\Users\Ferhat\Desktop\MProject2_Verilog\Seven_Segment.v
+L0 1
+Z4 OP;L;10.4a;61
+r1
+!s85 0
+31
+!s108 1539995289.000000
+!s107 C:\Users\Ferhat\Desktop\MProject2_Verilog\Seven_Segment.v|
+Z5 !s90 -reportprogress|300|-work|work|-stats=none|C:\Users\Ferhat\Desktop\MProject2_Verilog\Seven_Segment.v|
+!s101 -O0
+!i113 1
+Z6 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+n@segment7
+vSeven_Segment
+!s110 1540034881
+!i10b 1
+!s100 ?e8WWGeigYQO6d5nY:lIP2
+IW5OSzFPAHEc[>=fKZEB?C0
+R0
+R1
+w1540034879
+R2
+R3
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1540034881.000000
+!s107 C:\Users\Ferhat\Desktop\MProject2_Verilog\Seven_Segment.v|
+R5
+!s101 -O0
+!i113 1
+R6
+n@seven_@segment
+vTop_Level
+!s110 1539994432
+!i10b 1
+!s100 9V7]M;ZGdLT57kdY_:6oh1
+Iei0TR@4QjSg<B;k=O:BE33
+R0
+R1
+w1539994422
+8C:/Users/Ferhat/Desktop/MProject2_Verilog/Top_Level.v
+FC:/Users/Ferhat/Desktop/MProject2_Verilog/Top_Level.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1539994432.000000
+!s107 C:/Users/Ferhat/Desktop/MProject2_Verilog/Top_Level.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Ferhat/Desktop/MProject2_Verilog/Top_Level.v|
+!s101 -O0
+!i113 1
+R6
+n@top_@level

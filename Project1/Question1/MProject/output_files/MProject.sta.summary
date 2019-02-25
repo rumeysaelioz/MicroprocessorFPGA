@@ -1,0 +1,113 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'button'
+Slack : -7.605
+TNS   : -455.174
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -1.261
+TNS   : -10.615
+
+Type  : Slow 1200mV 85C Model Setup 'Segment7:seg7|clk1[15]'
+Slack : 0.192
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Segment7:seg7|clk1[15]'
+Slack : 0.358
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.360
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'button'
+Slack : 0.382
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'button'
+Slack : -3.000
+TNS   : -79.174
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -19.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Segment7:seg7|clk1[15]'
+Slack : -1.000
+TNS   : -6.000
+
+Type  : Slow 1200mV 0C Model Setup 'button'
+Slack : -6.700
+TNS   : -400.180
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -0.989
+TNS   : -7.681
+
+Type  : Slow 1200mV 0C Model Setup 'Segment7:seg7|clk1[15]'
+Slack : 0.274
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Segment7:seg7|clk1[15]'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.319
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'button'
+Slack : 0.333
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'button'
+Slack : -3.000
+TNS   : -79.174
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -19.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Segment7:seg7|clk1[15]'
+Slack : -1.000
+TNS   : -6.000
+
+Type  : Fast 1200mV 0C Model Setup 'button'
+Slack : -3.750
+TNS   : -215.226
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -0.514
+TNS   : -0.744
+
+Type  : Fast 1200mV 0C Model Setup 'Segment7:seg7|clk1[15]'
+Slack : 0.550
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Segment7:seg7|clk1[15]'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.193
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'button'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'button'
+Slack : -3.000
+TNS   : -88.781
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -19.964
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Segment7:seg7|clk1[15]'
+Slack : -1.000
+TNS   : -6.000
+
+------------------------------------------------------------
