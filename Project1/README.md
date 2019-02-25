@@ -8,8 +8,8 @@ Write a program that will calculate the expression given below and put the resul
 [(((117|64)++)-(47&15))--]^!(12-95)  
 
 
--Question2
-construct a Verilog code which will display the student numbers of both members of the group in a concatenated way. i.e. if the numbers 123456789 and 444444444, you will display 123456789444444444. This number will be displayed in 4-digit 7-Segment display in a sliding manner. The manner of the slide will be determined by the switches of the dip-switch.
+-Question2  
+Construct a Verilog code which will display the student numbers of both members of the group in a concatenated way. i.e. if the numbers 123456789 and 444444444, you will display 123456789444444444. This number will be displayed in 4-digit 7-Segment display in a sliding manner. The manner of the slide will be determined by the switches of the dip-switch.
 
 * Switch 1 controls whether the speed is normal or double.
 
