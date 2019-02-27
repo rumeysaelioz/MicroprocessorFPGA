@@ -1,2 +1,2 @@
 # MicroprocessorFPGA
-These projects belong to the microprocessor course.
+This project belongs to the microprocessor course.
